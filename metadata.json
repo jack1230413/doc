@@ -1,0 +1,6 @@
+{
+  "name": "金寧數位資訊中心",
+  "description": "金寧數位資訊中心 (金寧DOC) 長輩互動樂活網，包含長輩選單、懷舊相簿、與互動式金門地圖導覽。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
