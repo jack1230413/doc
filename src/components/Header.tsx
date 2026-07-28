@@ -52,7 +52,7 @@ export default function Header() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span>昔果山 ｜ 金寧數位機會中心 🟢</span>
+            <span>昔果山社區發展協會 ｜ 金寧數位機會中心 🟢</span>
           </div>
           
           <div className="flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function Header() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl font-extrabold text-stone-800 font-sans tracking-tight leading-tight"
               >
-                昔果山
+                昔果山社區發展協會
                 <span className="block mt-1 text-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
                   銀髮數位學習樂園
                 </span>
