@@ -5,13 +5,15 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/doc/',
+    base: './', // 👈 這裡改成 './'
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
-      },
-    },
+        // 其他原本的設定保持原樣...
+      }
+    }
+  }
+})
     server: {
       host: '0.0.0.0',
       port: 3000,
