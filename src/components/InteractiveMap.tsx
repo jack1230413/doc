@@ -12,7 +12,7 @@ export default function InteractiveMap() {
 
   // Customized coordinate points for interactive pins on the map
   const landmarks = [
-    { name: '金寧DOC (金寧圖書館)', x: 340, y: 175, type: 'doc', desc: '我們的數位學習大本營！' },
+    { name: '昔果山 (活動中心)', x: 340, y: 175, type: 'doc', desc: '我們的數位學習大本營！' },
     { name: '古寧頭戰史館', x: 305, y: 135, type: 'landmark', desc: '歷史戰役紀念地' },
     { name: '北山播音牆', x: 285, y: 145, type: 'landmark', desc: '巨大的水泥播音牆古蹟' },
     { name: '慈湖落日平台', x: 295, y: 185, type: 'landmark', desc: '絕美落日夕陽與鸕鶿景觀' },
@@ -58,7 +58,7 @@ export default function InteractiveMap() {
             transition={{ delay: 0.2 }}
             className="text-stone-500 mt-3 max-w-xl mx-auto text-sm md:text-base leading-relaxed"
           >
-            點擊下方互動地圖的各個區域，探索金門五大鄉鎮的獨特風情！金寧DOC正在熱情地對您招手喔 🦁✨
+            點擊下方互動地圖的各個區域，探索金門五大鄉鎮的獨特風情！昔果山正在熱情地對您招手喔 🦁✨
           </motion.p>
         </div>
 
@@ -81,7 +81,7 @@ export default function InteractiveMap() {
               <div className="space-y-1 text-stone-600">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                  <span>金寧DOC (學習中心)</span>
+                  <span>昔果山 (學習中心)</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-amber-500"></span>
@@ -415,7 +415,7 @@ export default function InteractiveMap() {
                       <MapPin className="w-4 h-4 animate-bounce" />
                     </div>
                     <div>
-                      <h5 className="text-xs font-bold text-red-800 mb-0.5">金寧數位資訊中心 (圖書館2F)</h5>
+                      <h5 className="text-xs font-bold text-red-800 mb-0.5">昔果山 (活動中心)</h5>
                       <p className="text-[11px] text-red-700 leading-relaxed">
                         我們在這裡教導長輩使用平板電腦、智慧型手機和各類數位工具。歡迎長輩們每天來喝茶、上網學習、一起記錄精彩人生！
                       </p>

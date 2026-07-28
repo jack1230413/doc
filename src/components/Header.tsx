@@ -34,7 +34,7 @@ export default function Header() {
     return '「晚安！風獅爺在古寧頭慈湖畔守護著大家。夜深了，點盞溫馨的小燈，回顧長輩們的精彩回憶吧！」';
   };
 
-  const bannerImagePath = '/src/assets/images/jinning_doc_banner_1783351796414.jpg';
+  const bannerImagePath = '/src/assets/images/jinning_doc_classroom_1785148258610.jpg';
 
   return (
     <header className="relative w-full overflow-hidden bg-linear-to-b from-amber-50/50 to-orange-50/30 border-b border-orange-100/40 pb-12 pt-8 px-4 md:px-8">
@@ -52,7 +52,7 @@ export default function Header() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span>金寧數位資訊中心 ｜ 樂活老幼銀髮數位網 🟢</span>
+            <span>昔果山 ｜ 金寧數位機會中心 🟢</span>
           </div>
           
           <div className="flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function Header() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl font-extrabold text-stone-800 font-sans tracking-tight leading-tight"
               >
-                金寧數位資訊中心
+                昔果山
                 <span className="block mt-1 text-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
                   銀髮數位學習樂園
                 </span>
@@ -101,7 +101,7 @@ export default function Header() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-stone-600 text-sm md:text-base leading-relaxed"
               >
-                金寧數位資訊中心 (Jinning DOC) 坐落於美麗的金寧鄉公所圖書館二樓。
+                金寧數位機會中心 (Jinning DOC) 坐落於美麗的昔果山村莊。
                 我們專為金寧鄉的長輩們提供最溫暖、貼心的數位學習服務。從平板電腦、
                 手機拍照、LINE長輩圖設計，到傳承金門記憶的數位回憶錄，讓每位長輩都能在科技世界中活出自信、樂活不老！
               </motion.p>
@@ -163,7 +163,7 @@ export default function Header() {
             <div className="relative w-full max-w-[460px] aspect-16/10 rounded-2xl overflow-hidden border-4 border-white shadow-xl shadow-orange-500/5 bg-stone-100 group">
               <img
                 src={bannerImagePath}
-                alt="長輩在金寧DOC數位資訊中心共同學習"
+                alt="長輩在昔果山共同學習"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
               />

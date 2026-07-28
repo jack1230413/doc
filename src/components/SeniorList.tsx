@@ -44,7 +44,7 @@ export default function SeniorList() {
             長輩樂活園地
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 tracking-tight flex items-center gap-2">
-            金寧 DOC 長輩選單
+            昔果山長輩選單
             <span className="text-lg md:text-xl animate-pulse">🌟</span>
           </h2>
           <p className="text-stone-500 text-xs md:text-sm mt-1">
@@ -206,7 +206,7 @@ export default function SeniorList() {
                   </div>
                   <div className="flex items-center gap-1 text-xs text-orange-600 font-semibold mt-1">
                     <Award className="w-3.5 h-3.5" />
-                    <span>榮獲金寧DOC榮譽勳章：{selectedSenior.badge}</span>
+                    <span>榮獲昔果山榮譽勳章：{selectedSenior.badge}</span>
                   </div>
                 </div>
               </div>
@@ -228,7 +228,7 @@ export default function SeniorList() {
                 <div>
                   <h4 className="text-xs font-bold text-orange-800 tracking-wider uppercase mb-1.5 flex items-center gap-1">
                     <BookOpen className="w-3.5 h-3.5 text-orange-500" />
-                    金寧 DOC 數位學習故事
+                    昔果山 數位學習故事
                   </h4>
                   <div className="p-4 bg-orange-50/50 border border-orange-100/50 rounded-xl">
                     <p className="text-xs md:text-sm leading-relaxed text-stone-600">
@@ -253,7 +253,7 @@ export default function SeniorList() {
               <div className="mt-8 pt-4 border-t border-stone-100 flex justify-between items-center">
                 <div className="text-[10px] text-stone-400 flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-orange-400 animate-pulse" />
-                  <span>金寧數位中心活潑樂學 🦁</span>
+                  <span>昔果山活潑樂學 🦁</span>
                 </div>
                 <button
                   onClick={() => setSelectedSenior(null)}

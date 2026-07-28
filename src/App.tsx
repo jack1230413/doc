@@ -29,7 +29,7 @@ export default function App() {
             </div>
             <div>
               <span className="font-extrabold text-base text-stone-800 tracking-tight font-sans">
-                金寧數位資訊中心
+                昔果山
               </span>
               <span className="hidden sm:inline-block text-[10px] bg-orange-100 text-orange-800 font-bold px-1.5 py-0.2 rounded ml-1.5 border border-orange-200">
                 金寧 DOC
@@ -100,7 +100,7 @@ export default function App() {
             className="bg-white text-orange-600 hover:bg-orange-50 transition-all duration-300 font-extrabold text-xs md:text-sm px-6 py-3 rounded-2xl shadow-md flex items-center gap-2 group shrink-0"
           >
             <ImageIcon className="w-4.5 h-4.5 group-hover:rotate-12 transition-transform" />
-            點此開啟懷舊照片 🎞️
+            查看懷舊照片
           </button>
         </motion.section>
 
@@ -145,7 +145,7 @@ export default function App() {
                 🦁
               </div>
               <span className="font-extrabold text-base text-stone-800 tracking-tight">
-                金寧數位資訊中心 (DOC)
+                昔果山
               </span>
             </div>
             <p className="text-stone-500 text-xs leading-relaxed max-w-sm">
@@ -161,25 +161,25 @@ export default function App() {
               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-left hover:text-orange-500 transition-colors">回網頁最頂端</button>
               <button onClick={() => scrollToSection('senior-directory')} className="text-left hover:text-orange-500 transition-colors">長輩樂活選單 (全部/男/女)</button>
               <button onClick={() => scrollToSection('nostalgia-gallery')} className="text-left hover:text-orange-500 transition-colors">懷舊時光相簿 (三大懷舊視角)</button>
-              <button onClick={() => scrollToSection('kinmen-map')} className="text-left hover:text-orange-500 transition-colors">金門互動地圖 (金寧鄉特別標記)</button>
+              <button onClick={() => scrollToSection('kinmen-map')} className="text-left hover:text-orange-500 transition-colors">金門互動地圖</button>
             </div>
           </div>
 
           {/* Info Contact */}
           <div className="md:col-span-4 space-y-2.5">
-            <h4 className="font-bold text-stone-700 tracking-wider">中心聯絡資訊</h4>
+            <h4 className="font-bold text-stone-700 tracking-wider">聯絡資訊</h4>
             <div className="space-y-1.5 text-xs text-stone-500 leading-relaxed">
               <p className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                <span>金門縣金寧鄉雅賢街 1 號 (金寧鄉公所圖書館2樓)</span>
+                <span>金門縣金寧鄉榜林村昔果山58-1號</span>
               </p>
               <p className="flex items-center gap-1.5">
                 <BookOpen className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                <span>指導單位：教育部 ｜ 承辦單位：金寧鄉公所</span>
+                <span>指導單位：小農文創有限公司</span>
               </p>
               <p className="flex items-center gap-1.5">
                 <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400 shrink-0 animate-pulse" />
-                <span>金門大橋旁，伴您樂學數位生活</span>
+                <span>伴您樂學數位生活</span>
               </p>
             </div>
           </div>
@@ -188,9 +188,9 @@ export default function App() {
 
         {/* Bottom Rights */}
         <div className="max-w-6xl mx-auto border-t border-stone-200/50 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-400 gap-4">
-          <p>版權所有 © 2026 金寧數位資訊中心 (Jinning Digital Option Center). All Rights Reserved.</p>
+          <p>版權所有 © 2026 Jinning Digital Option Center. All Rights Reserved.</p>
           <div className="flex items-center gap-3 font-mono">
-            <span>設計：樂活數位開發團隊</span>
+            <span>設計：金寧數位機會中心</span>
             <span>｜</span>
             <span>地點：台灣金門縣金寧鄉</span>
           </div>
