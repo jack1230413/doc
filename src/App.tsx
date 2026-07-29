@@ -149,7 +149,7 @@ export default function App() {
               </span>
             </div>
             <p className="text-stone-500 text-xs leading-relaxed max-w-sm">
-              致力於推廣偏鄉數位落差改善、樂活銀髮數位共學，
+              金寧DOC致力於推廣偏鄉數位落差改善、樂活銀髮數位共學，
               協助長輩運用平板與手機科技，記錄生活美好、傳承珍貴的金門歷史故事與無形文化。
             </p>
           </div>
