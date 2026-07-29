@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './', // 👈 這裡改成 './'
+    base: '/doc/', // 👈 這裡改成 './'
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
