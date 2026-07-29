@@ -1,19 +1,17 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/doc/', // 👈 這裡改成 './'
+    base: '/doc/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        // 其他原本的設定保持原樣...
-      }
-    }
-  }
-})
+        '@': path.resolve(__dirname, './src'),
+      },
+    },
     server: {
       host: '0.0.0.0',
       port: 3000,
