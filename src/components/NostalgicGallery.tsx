@@ -57,7 +57,7 @@ export default function NostalgicGallery({ isOpen, onClose }: NostalgicGalleryPr
                 回憶時光機
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-stone-800 tracking-tight">
-                金寧懷舊時光相簿
+                懷舊時光相簿
               </h2>
               <p className="text-stone-500 text-xs md:text-sm mt-1 max-w-lg">
                 這些黑白與彩色的影像，是長輩們年輕時生活的舞台，承載著金寧鄉厚重的歷史與愛。點擊照片看故事！
