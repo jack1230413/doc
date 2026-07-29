@@ -192,7 +192,7 @@ export default function App() {
           <div className="flex items-center gap-3 font-mono">
             <span>設計：金寧數位機會中心</span>
             <span>｜</span>
-            <span>地點：台灣金門縣金寧鄉</span>
+            <span>地點：昔果山</span>
           </div>
         </div>
       </footer>
