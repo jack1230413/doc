@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Users, UserCheck, Heart, Award, Sparkles, BookOpen, Clock, X } from 'lucide-react';
+import { Users, Heart, Award, Sparkles, BookOpen, Clock, X, Camera, Eye } from 'lucide-react';
 import { SENIORS } from '../data';
 import { Senior } from '../types';
 
 export default function SeniorList() {
   const [filter, setFilter] = useState<'全部' | '男' | '女'>('全部');
   const [selectedSenior, setSelectedSenior] = useState<Senior | null>(null);
+  const [previewImage, setPreviewImage] = useState<{ url: string; caption: string } | null>(null);
 
   const filteredSeniors = filter === '全部'
     ? SENIORS
@@ -48,7 +49,7 @@ export default function SeniorList() {
             <span className="text-lg md:text-xl animate-pulse">🌟</span>
           </h2>
           <p className="text-stone-500 text-xs md:text-sm mt-1">
-            這裡記錄了每一位在數位中心努力學習、開心交流的可愛長輩。點點看，看他們的數位驚奇歷程！
+            這裡記錄了每一位在數位中心努力學習、開心交流的可愛長輩。點點看，欣賞長輩們的個人生活照片與數位學習驚奇歷程！
           </p>
         </div>
 
@@ -145,11 +146,35 @@ export default function SeniorList() {
                     {senior.personality}
                   </span>
                 </p>
+
+                {/* Life photos preview thumbnails */}
+                {senior.lifePhotos && senior.lifePhotos.length > 0 && (
+                  <div className="mt-3.5 pt-3 border-t border-stone-100/80">
+                    <div className="flex items-center justify-between text-[11px] text-stone-500 font-medium mb-1.5">
+                      <span className="flex items-center gap-1 text-orange-700 font-semibold">
+                        <Camera className="w-3 h-3 text-orange-500" />
+                        個人生活照 ({senior.lifePhotos.length}張)
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {senior.lifePhotos.map((photo, i) => (
+                        <div key={i} className="aspect-4/3 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/60 relative group/img">
+                          <img
+                            src={photo.url}
+                            alt={photo.caption}
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Read more footer inside card */}
-              <div className="mt-5 pt-3.5 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-400 group-hover:text-orange-500 transition-colors">
-                <span>看學習故事...</span>
+              <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-400 group-hover:text-orange-500 transition-colors">
+                <span>查看故事與生活照片...</span>
                 <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform">
                   ➔
                 </span>
@@ -173,96 +198,166 @@ export default function SeniorList() {
               initial={{ scale: 0.95, y: 15 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-lg w-full border border-orange-100/50 p-6 md:p-8 relative"
+              className="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col border border-orange-100/50 relative"
               onClick={e => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedSenior(null)}
-                className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 bg-stone-100 p-1.5 rounded-full transition-colors"
+                className="absolute top-4 right-4 z-10 text-stone-400 hover:text-stone-600 bg-stone-100/80 backdrop-blur-xs p-2 rounded-full transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
 
-              {/* Top Banner Avatar */}
-              <div className="flex items-center gap-4 mb-6 pb-5 border-b border-stone-100">
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-md border shrink-0 ${
-                  selectedSenior.gender === '男' 
-                    ? 'bg-sky-50 border-sky-100/70 text-sky-800' 
-                    : 'bg-rose-50 border-rose-100/70 text-rose-800'
-                }`}>
-                  {selectedSenior.avatar}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-bold text-stone-800">{selectedSenior.name}</h3>
-                    <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold ${
-                      selectedSenior.gender === '男' 
-                        ? 'bg-sky-100 text-sky-800' 
-                        : 'bg-rose-100 text-rose-800'
-                    }`}>
-                      {selectedSenior.gender}性 ｜ {selectedSenior.age}歲
-                    </span>
+              {/* Scrollable Container */}
+              <div className="p-6 md:p-8 overflow-y-auto space-y-6 custom-scrollbar">
+                {/* Top Banner Avatar */}
+                <div className="flex items-center gap-4 pb-5 border-b border-stone-100 pr-8">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-md border shrink-0 ${
+                    selectedSenior.gender === '男' 
+                      ? 'bg-sky-50 border-sky-100/70 text-sky-800' 
+                      : 'bg-rose-50 border-rose-100/70 text-rose-800'
+                  }`}>
+                    {selectedSenior.avatar}
                   </div>
-                  <div className="flex items-center gap-1 text-xs text-orange-600 font-semibold mt-1">
-                    <Award className="w-3.5 h-3.5" />
-                    <span>榮獲昔果山榮譽勳章：{selectedSenior.badge}</span>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-xl font-bold text-stone-800">{selectedSenior.name}</h3>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold ${
+                        selectedSenior.gender === '男' 
+                          ? 'bg-sky-100 text-sky-800' 
+                          : 'bg-rose-100 text-rose-800'
+                      }`}>
+                        {selectedSenior.gender}性 ｜ {selectedSenior.age}歲
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 text-xs text-orange-600 font-semibold mt-1">
+                      <Award className="w-3.5 h-3.5" />
+                      <span>榮獲昔果山榮譽勳章：{selectedSenior.badge}</span>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Content sections */}
-              <div className="space-y-5 text-stone-700">
-                {/* 1. Personality */}
-                <div>
-                  <h4 className="text-xs font-bold text-stone-400 tracking-wider uppercase mb-1 flex items-center gap-1">
-                    <Heart className="w-3.5 h-3.5 text-stone-400" />
-                    個性特質
-                  </h4>
-                  <p className="text-sm text-stone-700 font-medium bg-stone-50 p-2.5 rounded-xl border border-stone-100">
-                    {selectedSenior.personality}
-                  </p>
                 </div>
 
-                {/* 2. DOC Story */}
-                <div>
-                  <h4 className="text-xs font-bold text-orange-800 tracking-wider uppercase mb-1.5 flex items-center gap-1">
-                    <BookOpen className="w-3.5 h-3.5 text-orange-500" />
-                    昔果山 數位學習故事
-                  </h4>
-                  <div className="p-4 bg-orange-50/50 border border-orange-100/50 rounded-xl">
-                    <p className="text-xs md:text-sm leading-relaxed text-stone-600">
-                      {selectedSenior.docStory}
+                {/* Content sections */}
+                <div className="space-y-5 text-stone-700">
+                  {/* 1. Personal Life Photos (兩張個人生活照片) */}
+                  {selectedSenior.lifePhotos && selectedSenior.lifePhotos.length > 0 && (
+                    <div>
+                      <h4 className="text-xs font-bold text-orange-900 tracking-wider uppercase mb-2 flex items-center gap-1.5">
+                        <Camera className="w-4 h-4 text-orange-500" />
+                        長輩個人生活照片 ({selectedSenior.lifePhotos.length} 張)
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {selectedSenior.lifePhotos.map((photo, index) => (
+                          <div
+                            key={index}
+                            onClick={() => setPreviewImage(photo)}
+                            className="group relative bg-stone-50 rounded-xl overflow-hidden border border-stone-200/80 shadow-xs hover:shadow-md transition-all cursor-pointer"
+                          >
+                            <div className="aspect-4/3 w-full overflow-hidden bg-stone-200">
+                              <img
+                                src={photo.url}
+                                alt=""
+                                referrerPolicy="no-referrer"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                            </div>
+                            <div className="absolute top-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-xs font-medium">
+                              點擊放大
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 2. Personality */}
+                  <div>
+                    <h4 className="text-xs font-bold text-stone-400 tracking-wider uppercase mb-1 flex items-center gap-1">
+                      <Heart className="w-3.5 h-3.5 text-stone-400" />
+                      個性特質
+                    </h4>
+                    <p className="text-sm text-stone-700 font-medium bg-stone-50 p-2.5 rounded-xl border border-stone-100">
+                      {selectedSenior.personality}
+                    </p>
+                  </div>
+
+                  {/* 3. DOC Story */}
+                  <div>
+                    <h4 className="text-xs font-bold text-orange-800 tracking-wider uppercase mb-1.5 flex items-center gap-1">
+                      <BookOpen className="w-3.5 h-3.5 text-orange-500" />
+                      昔果山 數位學習故事
+                    </h4>
+                    <div className="p-4 bg-orange-50/50 border border-orange-100/50 rounded-xl">
+                      <p className="text-xs md:text-sm leading-relaxed text-stone-600">
+                        {selectedSenior.docStory}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 4. Favorite Nostalgic Memory */}
+                  <div>
+                    <h4 className="text-xs font-bold text-stone-400 tracking-wider uppercase mb-1 flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-stone-400" />
+                      珍貴懷舊回憶 (金門時光)
+                    </h4>
+                    <p className="text-xs md:text-sm leading-relaxed text-stone-500 italic bg-stone-50 p-3 rounded-xl border border-dashed border-stone-200">
+                      「 {selectedSenior.favoriteMemory} 」
                     </p>
                   </div>
                 </div>
 
-                {/* 3. Favorite Nostalgic Memory */}
-                <div>
-                  <h4 className="text-xs font-bold text-stone-400 tracking-wider uppercase mb-1 flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-stone-400" />
-                    珍貴懷舊回憶 (金門時光)
-                  </h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-stone-500 italic bg-stone-50 p-3 rounded-xl border border-dashed border-stone-200">
-                    「 {selectedSenior.favoriteMemory} 」
-                  </p>
+                {/* Action Button Footer */}
+                <div className="pt-4 border-t border-stone-100 flex justify-between items-center">
+                  <div className="text-[10px] text-stone-400 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-orange-400 animate-pulse" />
+                    <span>昔果山活潑樂學 🦁</span>
+                  </div>
+                  <button
+                    onClick={() => setSelectedSenior(null)}
+                    className="bg-orange-500 hover:bg-orange-600 text-white text-xs px-5 py-2 rounded-xl font-bold shadow-xs transition-colors"
+                  >
+                    太棒了，關閉
+                  </button>
                 </div>
               </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-              {/* Action Button */}
-              <div className="mt-8 pt-4 border-t border-stone-100 flex justify-between items-center">
-                <div className="text-[10px] text-stone-400 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-orange-400 animate-pulse" />
-                  <span>昔果山活潑樂學 🦁</span>
-                </div>
-                <button
-                  onClick={() => setSelectedSenior(null)}
-                  className="bg-orange-500 hover:bg-orange-600 text-white text-xs px-5 py-2 rounded-xl font-bold shadow-xs transition-colors"
-                >
-                  太棒了，關閉
-                </button>
+      {/* --- LIGHTBOX PHOTO PREVIEW MODAL --- */}
+      <AnimatePresence>
+        {previewImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[60] flex items-center justify-center p-4"
+            onClick={() => setPreviewImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-2xl w-full bg-stone-900 rounded-2xl overflow-hidden border border-stone-800 shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setPreviewImage(null)}
+                className="absolute top-3 right-3 z-10 text-white/80 hover:text-white bg-black/50 p-2 rounded-full transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="w-full bg-black flex items-center justify-center max-h-[80vh] overflow-hidden">
+                <img
+                  src={previewImage.url}
+                  alt=""
+                  referrerPolicy="no-referrer"
+                  className="w-full max-h-[80vh] object-contain"
+                />
               </div>
-
             </motion.div>
           </motion.div>
         )}

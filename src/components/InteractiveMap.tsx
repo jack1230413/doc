@@ -3,25 +3,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Info, Compass, Sparkles, Building2 } from 'lucide-react';
 import { TOWNSHIPS } from '../data';
 import { TownshipInfo } from '../types';
+import mapImg from '../assets/images/kinmen-map.png';
 
 export default function InteractiveMap() {
   const [selectedTownship, setSelectedTownship] = useState<TownshipInfo>(
     TOWNSHIPS.find(t => t.id === 'jinning') || TOWNSHIPS[0]
   );
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-
-  // Customized coordinate points for interactive pins on the map
-  const landmarks = [
-    { name: '昔果山 (活動中心)', x: 340, y: 175, type: 'doc', desc: '我們的數位學習大本營！' },
-    { name: '古寧頭戰史館', x: 305, y: 135, type: 'landmark', desc: '歷史戰役紀念地' },
-    { name: '北山播音牆', x: 285, y: 145, type: 'landmark', desc: '巨大的水泥播音牆古蹟' },
-    { name: '慈湖落日平台', x: 295, y: 185, type: 'landmark', desc: '絕美落日夕陽與鸕鶿景觀' },
-    { name: '莒光樓', x: 310, y: 265, type: 'landmark', desc: '金門精神地標' },
-    { name: '陳景蘭洋樓', x: 530, y: 255, type: 'landmark', desc: '金門最大最華麗的西洋式洋樓' },
-    { name: '太武山 (毋忘在莒)', x: 520, y: 205, type: 'landmark', desc: '金門最高峰，登山遠眺' },
-    { name: '山后民俗文化村', x: 610, y: 125, type: 'landmark', desc: '完整18棟閩南傳統古厝聚落' },
-    { name: '沙溪堡', x: 95, y: 275, type: 'landmark', desc: '小金門最西端守衛哨' },
-  ];
 
   return (
     <section id="kinmen-map" className="py-12 px-4 md:px-8 bg-gradient-to-b from-amber-50/20 to-orange-50/50 rounded-3xl border border-orange-100/60 my-12 shadow-sm">
@@ -58,275 +45,60 @@ export default function InteractiveMap() {
             transition={{ delay: 0.2 }}
             className="text-stone-500 mt-3 max-w-xl mx-auto text-sm md:text-base leading-relaxed"
           >
-            點擊下方互動地圖的各個區域，探索金門五大鄉鎮的獨特風情！昔果山正在熱情地對您招手喔 🦁✨
+            探索金門五大鄉鎮的獨特風情！昔果山數位機會中心位於金寧鄉，熱情歡迎大家前來學習交流 🦁✨
           </motion.p>
         </div>
 
         {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Map Area (7 Cols) */}
+          {/* Map Image Area (7 Cols) */}
           <div className="lg:col-span-7 bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-stone-100 flex flex-col justify-between relative overflow-hidden min-h-[380px] md:min-h-[440px]">
-            {/* Background elements */}
-            <div className="absolute top-2 left-3 text-[10px] font-mono text-stone-300 pointer-events-none select-none">
-              TAIWAN STRAIT / KINMEN MAP v1.0
-            </div>
             
-            {/* Legend / Title overlay */}
-            <div className="absolute top-4 right-4 bg-amber-50/90 backdrop-blur-xs border border-amber-200/50 p-3 rounded-xl text-xs pointer-events-none shadow-xs">
-              <p className="font-semibold text-stone-700 mb-1.5 flex items-center gap-1">
-                <span className="inline-block w-2.5 h-2.5 bg-orange-500 rounded-xs"></span>
-                地圖圖例說明
+            {/* Top Bar Label */}
+            <div className="flex items-center justify-between mb-3 text-xs text-stone-500 font-medium">
+              <span className="font-mono text-[11px] text-stone-400">KINMEN MAP</span>
+              <span className="bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full font-bold text-[11px]">
+                昔果山數位機會中心所在地：金寧鄉
+              </span>
+            </div>
+
+            {/* Kinmen Map Image Container */}
+            <div className="w-full flex-1 flex items-center justify-center py-2 relative group overflow-hidden rounded-xl bg-stone-50/50 border border-stone-100">
+              <img 
+                src={mapImg} 
+                alt="金門地圖" 
+                className="w-full h-auto max-h-[380px] object-contain rounded-lg transition-transform duration-500 group-hover:scale-102"
+              />
+            </div>
+
+            {/* Township Selector Buttons underneath the map image */}
+            <div className="mt-4 pt-3 border-t border-stone-100">
+              <p className="text-xs text-stone-500 font-semibold mb-2 text-center flex items-center justify-center gap-1">
+                <Info className="w-3.5 h-3.5 text-orange-500" />
+                點擊選擇鄉鎮看詳細導覽與特產介紹：
               </p>
-              <div className="space-y-1 text-stone-600">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                  <span>昔果山 (學習中心)</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-amber-500"></span>
-                  <span>知名地標/景點</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="inline-block w-4 h-0.5 border-t border-dashed border-sky-400"></span>
-                  <span>金門大橋 (2022開通)</span>
-                </div>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                {TOWNSHIPS.map((township) => {
+                  const isSelected = selectedTownship.id === township.id;
+                  const isJinning = township.id === 'jinning';
+                  return (
+                    <button
+                      key={township.id}
+                      onClick={() => setSelectedTownship(township)}
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                        isSelected
+                          ? isJinning
+                            ? 'bg-amber-500 text-white border-amber-600 shadow-sm scale-105 ring-2 ring-amber-200'
+                            : 'bg-orange-500 text-white border-orange-600 shadow-sm scale-105'
+                          : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'
+                      }`}
+                    >
+                      {township.chineseName} {isJinning && '🦁'}
+                    </button>
+                  );
+                })}
               </div>
-            </div>
-
-            {/* SVG Interactive Map */}
-            <div className="w-full flex-1 flex items-center justify-center">
-              <svg 
-                viewBox="0 0 750 380" 
-                className="w-full h-auto max-w-[620px] select-none filter drop-shadow-md"
-              >
-                {/* Sea/Water Accents */}
-                <path d="M 50,320 Q 120,330 180,310 T 320,320" fill="none" stroke="#bae6fd" strokeWidth="2" strokeDasharray="5,10" opacity="0.6" />
-                <path d="M 400,80 Q 480,70 560,90" fill="none" stroke="#bae6fd" strokeWidth="2" strokeDasharray="5,10" opacity="0.6" />
-
-                {/* --- KINMEN BRIDGE (金門大橋) --- */}
-                {/* Connects Lieyu (145, 250) to Jinning (280, 200) */}
-                <path 
-                  d="M 145,245 Q 210,210 280,195" 
-                  fill="none" 
-                  stroke="#38bdf8" 
-                  strokeWidth="3.5" 
-                  strokeDasharray="4,5" 
-                  className="animate-pulse"
-                />
-                <text x="210" y="200" transform="rotate(-15, 210, 200)" fill="#0284c7" className="text-[10px] font-bold tracking-wider font-sans">
-                  金門大橋
-                </text>
-
-                {/* --- TOWNSHIP SHAPES --- */}
-                
-                {/* 1. 烈嶼鄉 (Lieyu) - Little Kinmen */}
-                <g 
-                  onClick={() => setSelectedTownship(TOWNSHIPS.find(t => t.id === 'lieyu')!)}
-                  onMouseEnter={() => setHoveredId('lieyu')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  className="cursor-pointer transition-all duration-300"
-                >
-                  <path 
-                    d="M 80,240 C 90,200 135,210 145,230 C 160,250 145,285 115,290 C 85,295 70,265 80,240 Z" 
-                    className={`transition-colors duration-300 ${
-                      selectedTownship.id === 'lieyu' 
-                        ? 'fill-sky-200 stroke-sky-500 stroke-2 shadow-xs' 
-                        : hoveredId === 'lieyu'
-                          ? 'fill-sky-100 stroke-sky-400 stroke-2'
-                          : 'fill-sky-50/90 stroke-sky-300'
-                    }`}
-                  />
-                  <text x="110" y="255" className="fill-sky-800 font-bold text-xs font-sans pointer-events-none">烈嶼鄉</text>
-                </g>
-
-                {/* 2. 金城鎮 (Jincheng) */}
-                <g 
-                  onClick={() => setSelectedTownship(TOWNSHIPS.find(t => t.id === 'jincheng')!)}
-                  onMouseEnter={() => setHoveredId('jincheng')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  className="cursor-pointer transition-all duration-300"
-                >
-                  <path 
-                    d="M 280,225 C 280,210 320,220 330,230 C 355,210 380,240 380,265 C 380,295 330,315 295,300 C 270,290 260,255 280,225 Z" 
-                    className={`transition-colors duration-300 ${
-                      selectedTownship.id === 'jincheng' 
-                        ? 'fill-teal-200 stroke-teal-500 stroke-2' 
-                        : hoveredId === 'jincheng'
-                          ? 'fill-teal-100 stroke-teal-400 stroke-2'
-                          : 'fill-teal-50/90 stroke-teal-300'
-                    }`}
-                  />
-                  <text x="325" y="275" className="fill-teal-800 font-bold text-xs font-sans pointer-events-none">金城鎮</text>
-                </g>
-
-                {/* 3. 金寧鄉 (Jinning) - TARGET SPECIAL REGION */}
-                <g 
-                  onClick={() => setSelectedTownship(TOWNSHIPS.find(t => t.id === 'jinning')!)}
-                  onMouseEnter={() => setHoveredId('jinning')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  className="cursor-pointer transition-all duration-300"
-                >
-                  <path 
-                    d="M 280,225 C 290,170 330,125 385,145 C 405,155 425,185 410,210 C 390,230 355,220 330,230 C 320,220 280,210 280,225 Z" 
-                    className={`transition-colors duration-300 ${
-                      selectedTownship.id === 'jinning' 
-                        ? 'fill-amber-300 stroke-orange-500 stroke-3 filter drop-shadow-sm' 
-                        : hoveredId === 'jinning'
-                          ? 'fill-amber-200 stroke-orange-400 stroke-2'
-                          : 'fill-amber-100/90 stroke-amber-400'
-                    }`}
-                  />
-                  {/* Glowing border ring for Jinning */}
-                  {selectedTownship.id === 'jinning' && (
-                    <path 
-                      d="M 280,225 C 290,170 330,125 385,145 C 405,155 425,185 410,210 C 390,230 355,220 330,230 C 320,220 280,210 280,225 Z" 
-                      fill="none"
-                      stroke="#f97316"
-                      strokeWidth="1.5"
-                      className="animate-ping opacity-30"
-                    />
-                  )}
-                  <text x="330" y="165" className="fill-amber-900 font-extrabold text-sm font-sans pointer-events-none flex items-center">
-                    金寧鄉 🦁
-                  </text>
-                </g>
-
-                {/* Isthmus/Connecting Middle Land */}
-                <path 
-                  d="M 380,245 Q 430,215 465,215 Q 430,250 380,245" 
-                  fill="#f5f5f4" 
-                  stroke="#d6d3d1" 
-                  strokeWidth="1"
-                  opacity="0.9"
-                />
-
-                {/* 4. 金沙鎮 (Jinsha) */}
-                <g 
-                  onClick={() => setSelectedTownship(TOWNSHIPS.find(t => t.id === 'jinsha')!)}
-                  onMouseEnter={() => setHoveredId('jinsha')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  className="cursor-pointer transition-all duration-300"
-                >
-                  <path 
-                    d="M 465,215 C 465,185 480,140 520,115 C 580,95 650,115 660,155 C 670,195 620,215 575,205 C 535,205 480,215 465,215 Z" 
-                    className={`transition-colors duration-300 ${
-                      selectedTownship.id === 'jinsha' 
-                        ? 'fill-emerald-200 stroke-emerald-500 stroke-2' 
-                        : hoveredId === 'jinsha'
-                          ? 'fill-emerald-100 stroke-emerald-400 stroke-2'
-                          : 'fill-emerald-50/90 stroke-emerald-300'
-                    }`}
-                  />
-                  <text x="560" y="150" className="fill-emerald-800 font-bold text-xs font-sans pointer-events-none">金沙鎮</text>
-                </g>
-
-                {/* 5. 金湖鎮 (Jinhu) */}
-                <g 
-                  onClick={() => setSelectedTownship(TOWNSHIPS.find(t => t.id === 'jinhu')!)}
-                  onMouseEnter={() => setHoveredId('jinhu')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  className="cursor-pointer transition-all duration-300"
-                >
-                  <path 
-                    d="M 465,215 C 485,235 535,225 575,205 C 620,215 650,235 640,265 C 620,315 540,315 500,285 C 475,265 455,235 465,215 Z" 
-                    className={`transition-colors duration-300 ${
-                      selectedTownship.id === 'jinhu' 
-                        ? 'fill-indigo-200 stroke-indigo-500 stroke-2' 
-                        : hoveredId === 'jinhu'
-                          ? 'fill-indigo-100 stroke-indigo-400 stroke-2'
-                          : 'fill-indigo-50/90 stroke-indigo-300'
-                    }`}
-                  />
-                  <text x="535" y="265" className="fill-indigo-800 font-bold text-xs font-sans pointer-events-none">金湖鎮</text>
-                </g>
-
-                {/* --- DYNAMIC INTERACTIVE PINS --- */}
-                <AnimatePresence>
-                  {landmarks.map((pin, i) => {
-                    const isDoc = pin.type === 'doc';
-                    return (
-                      <g key={i} className="group/pin cursor-pointer">
-                        {isDoc ? (
-                          <>
-                            {/* Special pulsing ring for DOC */}
-                            <circle 
-                              cx={pin.x} 
-                              cy={pin.y} 
-                              r="11" 
-                              fill="none" 
-                              stroke="#ef4444" 
-                              strokeWidth="2" 
-                              className="animate-ping opacity-60"
-                            />
-                            {/* Outer interactive circle */}
-                            <circle 
-                              cx={pin.x} 
-                              cy={pin.y} 
-                              r="7" 
-                              fill="#ef4444" 
-                              className="stroke-white stroke-2 drop-shadow-sm" 
-                            />
-                            {/* Mascot or center dot */}
-                            <circle cx={pin.x} cy={pin.y} r="2.5" fill="#ffffff" />
-                            {/* Wind Lion Mascot flag */}
-                            <g transform={`translate(${pin.x - 14}, ${pin.y - 32})`}>
-                              <rect width="28" height="18" rx="4" fill="#ea580c" className="stroke-white stroke-1 drop-shadow-sm" />
-                              <text x="14" y="13" textAnchor="middle" className="fill-white text-[10px] font-bold">DOC</text>
-                            </g>
-                          </>
-                        ) : (
-                          <>
-                            {/* Small pin for standard landmarks */}
-                            <circle 
-                              cx={pin.x} 
-                              cy={pin.y} 
-                              r="4.5" 
-                              fill="#f59e0b" 
-                              className="stroke-white stroke-1.5 hover:scale-130 transition-transform duration-200" 
-                            />
-                          </>
-                        )}
-                        
-                        {/* Tooltip on hover */}
-                        <g className="opacity-0 group-hover/pin:opacity-100 transition-opacity duration-200 pointer-events-none">
-                          <rect 
-                            x={pin.x - 70} 
-                            y={pin.y - 52} 
-                            width="140" 
-                            height="34" 
-                            rx="6" 
-                            fill="#1c1917" 
-                            opacity="0.9" 
-                          />
-                          <text 
-                            x={pin.x} 
-                            y={pin.y - 38} 
-                            textAnchor="middle" 
-                            className="fill-white font-bold text-[9px] font-sans"
-                          >
-                            {pin.name}
-                          </text>
-                          <text 
-                            x={pin.x} 
-                            y={pin.y - 26} 
-                            textAnchor="middle" 
-                            className="fill-stone-300 text-[8px] font-sans"
-                          >
-                            {pin.desc}
-                          </text>
-                        </g>
-                      </g>
-                    );
-                  })}
-                </AnimatePresence>
-              </svg>
-            </div>
-
-            {/* Hint for interaction */}
-            <div className="text-center text-xs text-stone-400 font-sans mt-2 flex items-center justify-center gap-1">
-              <Info className="w-3.5 h-3.5 text-stone-300" />
-              點擊地圖色塊可切換右側鄉鎮導覽；游標懸停在圓點上可看景點名稱。
             </div>
           </div>
 

@@ -1,3 +1,8 @@
+export interface SeniorLifePhoto {
+  url: string;
+  caption: string;
+}
+
 export interface Senior {
   id: string;
   name: string;
@@ -10,6 +15,7 @@ export interface Senior {
   favoriteMemory: string; // Their nostalgic Kinmen memory
   badge: string; // DOC learning badge (e.g., "平板達人")
   badgeColor: string; // Badge badge background/text style
+  lifePhotos: SeniorLifePhoto[]; // 兩張個人生活照片
 }
 
 export interface NostalgicPhoto {

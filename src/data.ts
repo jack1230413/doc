@@ -15,7 +15,17 @@ export const SENIORS: Senior[] = [
     docStory: '剛來DOC時連怎麼解鎖平板都不會，在講師耐心指導下，現在福伯已經學會用YouTube搜尋他最愛的陳一郎老歌，還會用藍牙耳機聽歌、跟著哼唱，是班上的「數位情歌王子」！',
     favoriteMemory: '小時候在雙鯉湖旁看夕陽、抓泥鰍。那時候的古寧頭雖然經歷戰火，但村民們互相扶持的溫暖人情味，是他這輩子最難忘的記憶。',
     badge: '數位歌王',
-    badgeColor: 'bg-amber-100 text-amber-800 border-amber-300'
+    badgeColor: 'bg-amber-100 text-amber-800 border-amber-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
+        caption: '在自家庭院彈琴哼唱陳一郎台語經典老歌'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80',
+        caption: '古寧頭社區活動中心與老老少少講金門戰地故事'
+      }
+    ]
   },
   {
     id: '2',
@@ -28,7 +38,17 @@ export const SENIORS: Senior[] = [
     docStory: '花姨手藝一絕，做出來的貢糖香酥可口。在DOC學會用手機拍照後，她開始記錄自己做糕點的每一步驟，還學會了把漂亮的成品照片發到LINE群組，讓親友羨慕不已，堪稱「美食Line達人」！',
     favoriteMemory: '年輕時在金門老街上學做貢糖，那時滿街都是穿著草綠服的阿兵哥。大家下午會聚在井邊洗衣服、聊天，生活簡單卻充滿笑聲。',
     badge: '美食照達人',
-    badgeColor: 'bg-rose-100 text-rose-800 border-rose-300'
+    badgeColor: 'bg-rose-100 text-rose-800 border-rose-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+        caption: '準備剛剛出爐的古法手作金門貢糖與傳統糕點'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80',
+        caption: '用智慧型手機紀錄庭院悉心照料的花草綠植'
+      }
+    ]
   },
   {
     id: '3',
@@ -41,7 +61,17 @@ export const SENIORS: Senior[] = [
     docStory: '身為八二三砲戰的經歷者，盛伯一直想把自己的經歷記錄下來。來到DOC後，他一字一字學會了電腦鍵盤打字，成功在Word上敲打出超過萬字的回憶錄！DOC團隊還協助他編輯、數位保存並列印成冊。',
     favoriteMemory: '在碉堡守衛的夜晚，望著慈湖海岸線外的滿天星斗。雖然當時局勢緊張，但夜晚海浪拍打沙灘的聲音，有一種奇妙的平靜感。',
     badge: '回憶錄作家',
-    badgeColor: 'bg-sky-100 text-sky-800 border-sky-300'
+    badgeColor: 'bg-sky-100 text-sky-800 border-sky-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+        caption: '在書房用筆電專心一字一句打出八二三戰地回憶錄'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+        caption: '清晨前往慈湖海岸海堤步道晨跑鍛鍊身體'
+      }
+    ]
   },
   {
     id: '4',
@@ -54,7 +84,17 @@ export const SENIORS: Senior[] = [
     docStory: '金蓮阿嬤是我們DOC的「創意美編天后」！她不僅學會了使用平板，還在老師的引導下學會用免費設計軟體 Canva。她親自為自己做的純手工紅龜粿設計了專屬的包裝貼紙，還自豪地印出來貼在送給朋友的盒子上面！',
     favoriteMemory: '以前每逢元宵節或中秋節，全村的婦女都會聚在宗祠前一起蒸紅龜粿、聊家常。那種柴火的煙霧跟阿嬤們的笑聲交織在一起的畫面，非常溫馨。',
     badge: '設計小幫手',
-    badgeColor: 'bg-purple-100 text-purple-800 border-purple-300'
+    badgeColor: 'bg-purple-100 text-purple-800 border-purple-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=800&q=80',
+        caption: '開心展現親手完成的繽紛編織作品與創意飾品'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80',
+        caption: '在數位教室使用 CanVa 為紅龜粿設計包裝貼紙'
+      }
+    ]
   },
   {
     id: '5',
@@ -67,7 +107,17 @@ export const SENIORS: Senior[] = [
     docStory: '送伯總是對新鮮事物充滿好奇。在DOC學會使用Google地圖與導航後，他就像插上了翅膀，現在常常帶著DOC的夥伴們，一邊看著導航、一邊開車前往金門各個社區進行數位交流，是我們公認的「導航老司機」！',
     favoriteMemory: '年輕時在自家的金黃色高粱田裡揮汗如雨地收割。收成後將高粱送到酒廠，換回熱騰騰、香氣撲鼻的現釀金門高粱酒，與三五好友在樹下痛快暢飲。',
     badge: '導航老司機',
-    badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-300'
+    badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+        caption: '在傳統紅磚厝埕前擺上茶具熱情招待鄉親與同樂'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80',
+        caption: '利用手機地圖導航載著 DOC 學員探訪周邊村落'
+      }
+    ]
   },
   {
     id: '6',
@@ -80,7 +130,17 @@ export const SENIORS: Senior[] = [
     docStory: '月娥姐不甘於只當學員，她希望能把編織手藝傳承下去。在DOC，她學習了如何手持腳架、調整光線，並用平板錄製自己一步一步編織毛線的過程。她還學會了上傳YouTube與親友分享，在DOC群組裡有「百萬潛力網紅」的美稱！',
     favoriteMemory: '以前在沒有電燈的煤油燈下，一針一線為剛出生的孩子們織毛線衣。雖然眼睛很酸，但看著孩子們穿上毛衣時紅通通的笑臉，心裡就暖洋洋的。',
     badge: '明星YouTuber',
-    badgeColor: 'bg-red-100 text-red-800 border-red-300'
+    badgeColor: 'bg-red-100 text-red-800 border-red-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80',
+        caption: '架設平板腳架錄製編織教學影片準備上傳影音平台'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&q=80',
+        caption: '細心編織出送給小孫子的暖心純羊毛花帽'
+      }
+    ]
   },
   {
     id: '7',
@@ -93,7 +153,17 @@ export const SENIORS: Senior[] = [
     docStory: '順伯這輩子都在跟石蚵打交道。來到DOC後，他學會用平板查詢中央氣象署的「每日潮汐時間預報」，現在出海採蚵前都會先精準對照時間。他還用手機記錄下古寧頭潮間帶的「石蚵林」壯麗景觀，與全班分享。',
     favoriteMemory: '每天退潮時，與妻子挑著扁擔、踩著鬆軟的泥濘，走向海中一根根挺立的石蚵柱。雖然海風冰冷刺骨，但挑著沉甸甸、飽滿的石蚵回家時，內心的幸福感無可比擬。',
     badge: '智慧石蚵農',
-    badgeColor: 'bg-teal-100 text-teal-800 border-teal-300'
+    badgeColor: 'bg-teal-100 text-teal-800 border-teal-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        caption: '古寧頭潮間帶花崗岩石蚵柱前巡視自家蚵田'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80',
+        caption: '出海前使用平板精準查詢中央氣象署每日潮汐預報'
+      }
+    ]
   },
   {
     id: '8',
@@ -106,7 +176,17 @@ export const SENIORS: Senior[] = [
     docStory: '梅婆是DOC年齡最大的學員，也是大家的寶貝。她會唱許多快要失傳的金門傳統閩南語童謠。DOC老師教她使用數位錄音與平板錄音軟體，將她溫潤、充滿歷史感的歌聲錄製下來，為金門的無形文化資產留下珍貴紀錄。',
     favoriteMemory: '小時候在四合院大樹下，聽阿嬤一邊搖著蒲扇、一邊哼唱著「月光光，秀才郎」等童謠，伴隨周圍的蟲鳴與微風，沉沉入睡的夏夜。',
     badge: '文化傳承大使',
-    badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-300'
+    badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-300',
+    lifePhotos: [
+      {
+        url: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80',
+        caption: '在金寧傳統古厝前大樹下吟唱即將失傳的金門古調'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+        caption: '在數位錄音教室將珍貴的金門語童謠數位保存'
+      }
+    ]
   }
 ];
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Calendar, BookOpen, Clock, Heart, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Sparkles, Calendar, BookOpen, Clock, Heart, ArrowRight } from 'lucide-react';
 import heroImg from '../assets/images/444.jpg';
 
 export default function Header() {
@@ -59,10 +59,7 @@ export default function Header() {
               <Clock className="w-3.5 h-3.5 text-stone-400" />
               {currentTime || '金門時間載入中...'}
             </span>
-            <span className="text-orange-600 font-semibold flex items-center gap-0.5">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              金門大橋直達 🌉
-            </span>
+
           </div>
         </div>
 
