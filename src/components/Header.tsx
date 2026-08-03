@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Calendar, BookOpen, Clock, Heart, ArrowRight, ShieldCheck } from 'lucide-react';
+import heroImg from '../assets/images/444.jpg';
 
 export default function Header() {
   const [currentTime, setCurrentTime] = useState<string>('');
@@ -33,8 +34,6 @@ export default function Header() {
     if (hour >= 14 && hour < 18) return '「下午好！泡杯金門貢糖茶，跟著DOC長輩們一起看看過去的老相簿吧！」';
     return '「晚安！風獅爺在古寧頭慈湖畔守護著大家。夜深了，點盞溫馨的小燈，回顧長輩們的精彩回憶吧！」';
   };
-
-  const bannerImagePath = '/src/assets/images/jinning_doc_classroom_1785148258610.jpg';
 
   return (
     <header className="relative w-full overflow-hidden bg-linear-to-b from-amber-50/50 to-orange-50/30 border-b border-orange-100/40 pb-12 pt-8 px-4 md:px-8">
@@ -162,7 +161,7 @@ export default function Header() {
             {/* Visual Frame */}
             <div className="relative w-full max-w-[460px] aspect-16/10 rounded-2xl overflow-hidden border-4 border-white shadow-xl shadow-orange-500/5 bg-stone-100 group">
               <img
-                src={bannerImagePath}
+                src={heroImg}
                 alt="長輩在昔果山共同學習"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"

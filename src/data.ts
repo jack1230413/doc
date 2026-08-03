@@ -1,4 +1,7 @@
 import { Senior, NostalgicPhoto, TownshipInfo } from './types';
+import kinmenTraditionalHouseImg from './assets/images/kinmen_traditional_house_1783351809433.jpg';
+import kinmenOldStreetImg from './assets/images/kinmen_old_street_1783351821867.jpg';
+import kinmenOystersFieldImg from './assets/images/kinmen_oysters_field_1783351842719.jpg';
 
 export const SENIORS: Senior[] = [
   {
@@ -113,7 +116,7 @@ export const NOSTALGIC_PHOTOS: NostalgicPhoto[] = [
     title: '閩南傳統紅磚燕尾厝',
     description: '金門最具代表性的燕尾脊與馬背屋頂。紅磚與白石交織，承載了數百年閩南家族的溫暖記憶與宗族精神。金寧鄉的北山與南山聚落至今仍完好保存著如此壯麗的聚落。',
     year: '民國 60 年代 (1970s)',
-    imageUrl: '/src/assets/images/kinmen_traditional_house_1783351809433.jpg',
+    imageUrl: kinmenTraditionalHouseImg,
     category: '建築',
     location: '金寧鄉 古寧頭南北山聚落'
   },
@@ -122,7 +125,7 @@ export const NOSTALGIC_PHOTOS: NostalgicPhoto[] = [
     title: '戰地時期的老街與標語',
     description: '金門戰地政務時期的街道。街道兩旁掛滿了手寫的商店招牌，以及高聳的愛國標語。那是個軍民一家的年代，草綠服的軍人是街上最獨特的風景，也是長輩們難忘的青春背景。',
     year: '民國 65 年 (1976)',
-    imageUrl: '/src/assets/images/kinmen_old_street_1783351821867.jpg',
+    imageUrl: kinmenOldStreetImg,
     category: '生活',
     location: '金城鎮與金寧鄉交界 舊老街'
   },
@@ -131,7 +134,7 @@ export const NOSTALGIC_PHOTOS: NostalgicPhoto[] = [
     title: '古寧頭潮間帶的百年石蚵田',
     description: '矗立在泥灘地上、排列整齊的「石蚵柱」(花崗岩石條)。這是金門傳承超過四百年的獨特養殖方式，造就了體積小卻肉質極其鮮甜、有「海中牛奶」之稱的古寧頭石蚵。',
     year: '民國 70 年 (1981)',
-    imageUrl: '/src/assets/images/kinmen_oysters_field_1783351842719.jpg',
+    imageUrl: kinmenOystersFieldImg,
     category: '風景',
     location: '金寧鄉 古寧頭北山海堤'
   }
