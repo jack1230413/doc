@@ -124,7 +124,7 @@ export default function SeniorList() {
                   </span>
                 </div>
 
-                {/* Name & Gender & Age Row */}
+                {/* Name & Gender Row */}
                 <div className="flex items-baseline gap-2 mb-2">
                   <h3 className="text-lg font-bold text-stone-800 group-hover:text-orange-600 transition-colors">
                     {senior.name}
@@ -134,7 +134,7 @@ export default function SeniorList() {
                       ? 'bg-sky-50 text-sky-700 border border-sky-100' 
                       : 'bg-rose-50 text-rose-700 border border-rose-100'
                   }`}>
-                    {senior.gender} ｜ {senior.age}歲
+                    {senior.gender}
                   </span>
                 </div>
 
@@ -228,7 +228,7 @@ export default function SeniorList() {
                           ? 'bg-sky-100 text-sky-800' 
                           : 'bg-rose-100 text-rose-800'
                       }`}>
-                        {selectedSenior.gender}性 ｜ {selectedSenior.age}歲
+                        {selectedSenior.gender}性
                       </span>
                     </div>
                     <div className="flex items-center gap-1 text-xs text-orange-600 font-semibold mt-1">
