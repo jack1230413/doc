@@ -8,7 +8,7 @@ import senior1Photo2 from './assets/images/regenerated_image_1786455934656.jpg';
 import elderly01Img from './assets/images/regenerated_image_1786444088638.jpg';
 import elderly02Img from './assets/images/regenerated_image_1786444090907.jpg';
 import senior3Photo1 from './assets/images/regenerated_image_1786455936599.jpg';
-import senior3Photo2 from './assets/images/regenerated_image_1786455939011.jpg';
+import senior3Photo2 from './assets/images/kinmen_oysters_field_1783351842719.jpg';
 import senior4Photo1 from './assets/images/regenerated_image_1786455941313.jpg';
 import senior4Photo2 from './assets/images/regenerated_image_1786455944179.jpg';
 import senior5Photo1 from './assets/images/regenerated_image_1786455946740.jpg';
