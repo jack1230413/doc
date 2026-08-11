@@ -5,6 +5,9 @@ import kinmenOystersFieldImg from './assets/images/kinmen_oysters_field_17833518
 import elderly01Img from './assets/images/regenerated_image_1786444088638.jpg';
 import elderly02Img from './assets/images/regenerated_image_1786444090907.jpg';
 import elderly03Img from './assets/images/regenerated_image_1786466410442.jpg';
+import elderly04Img from './assets/images/regenerated_image_1786470484127.jpg';
+import elderly05Img from './assets/images/regenerated_image_1786472569099.jpg';
+import elderly06Img from './assets/images/regenerated_image_1786472571479.jpg';
 
 export const SENIORS: Senior[] = [
   {
@@ -25,7 +28,7 @@ export const SENIORS: Senior[] = [
         caption: '在自家庭院彈琴哼唱陳一郎台語經典老歌'
       },
       {
-        url: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80',
+        url: elderly04Img,
         caption: '古寧頭社區活動中心與老老少少講金門戰地故事'
       }
     ]
@@ -67,11 +70,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-sky-100 text-sky-800 border-sky-300',
     lifePhotos: [
       {
-        url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+        url: elderly05Img,
         caption: '在書房用筆電專心一字一句打出金門戰地回憶錄'
       },
       {
-        url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+        url: elderly06Img,
         caption: '清晨前往慈湖海岸海堤步道晨跑鍛鍊身體'
       }
     ]
