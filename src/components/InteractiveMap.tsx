@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Info, Compass, Sparkles, Building2 } from 'lucide-react';
 import { TOWNSHIPS } from '../data';
 import { TownshipInfo } from '../types';
-import mapImg from '../assets/images/doc/src/assets/images/kinmen-map-doc.png';
+import mapImg from '../assets/images/kinmen-map-doc.png';
 
 export default function InteractiveMap() {
   const [selectedTownship, setSelectedTownship] = useState<TownshipInfo>(
