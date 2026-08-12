@@ -14,6 +14,8 @@ import elderly09Img from './assets/images/regenerated_image_1786515011460.jpg';
 import elderly10Img from './assets/images/regenerated_image_1786515028076.jpg';
 import elderly11Img from './assets/images/regenerated_image_1786515037925.jpg';
 import elderly12Img from './assets/images/regenerated_image_1786515051717.jpg';
+import elderly13Img from './assets/images/regenerated_image_1786536808171.jpg';
+import elderly14Img from './assets/images/regenerated_image_1786536810060.jpg';
 
 export const SENIORS: Senior[] = [
   {
@@ -168,11 +170,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-teal-100 text-teal-800 border-teal-300',
     lifePhotos: [
       {
-        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        url: elderly13Img,
         caption: '古寧頭潮間帶花崗岩石蚵柱前巡視自家蚵田'
       },
       {
-        url: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80',
+        url: elderly14Img,
         caption: '出海前使用平板精準查詢中央氣象署每日潮汐預報'
       }
     ]
