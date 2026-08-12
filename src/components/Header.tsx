@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Calendar, BookOpen, Clock, Heart, ArrowRight } from 'lucide-react';
+import { Sparkles, Calendar, BookOpen, Clock, Heart, ArrowRight, MapPin, ExternalLink } from 'lucide-react';
 import heroImg from '../assets/images/444.jpg';
 
 export default function Header() {
@@ -78,7 +78,7 @@ export default function Header() {
               溫馨・樂活・數位・共學
             </motion.div>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <motion.h1
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -86,10 +86,31 @@ export default function Header() {
                 className="text-4xl md:text-5xl font-extrabold text-stone-800 font-sans tracking-tight leading-tight"
               >
                 昔果山社區發展協會
-                <span className="block mt-1 text-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
+              </motion.h1>
+
+              {/* Subtitle & Google Maps Link Button moved below title (indicated by arrow) */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="flex flex-wrap items-center gap-3 pt-0.5 pb-1"
+              >
+                <span className="inline-block text-xl md:text-2xl font-bold text-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
                   銀髮數位學習樂園
                 </span>
-              </motion.h1>
+
+                <a
+                  href="https://www.google.com/maps/place/%E6%98%94%E6%9E%9C%E5%B1%B1%E7%A4%BE%E5%8D%80%E6%B4%BB%E5%8B%95%E4%B8%AD%E5%BF%83/data=!4m2!3m1!1s0x0:0xbfbb47b5f319adfb?sa=X&ved=1t:2428&ictx=111"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-700 hover:to-amber-700 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-xs hover:shadow-md transition-all cursor-pointer border border-white/40 group"
+                  title="點擊前往 Google 地圖導航至昔果山社區活動中心（金寧DOC）"
+                >
+                  <MapPin className="w-3.5 h-3.5 fill-white text-red-600 animate-bounce" />
+                  <span>金寧DOC 📍</span>
+                  <ExternalLink className="w-3 h-3 text-amber-200 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </motion.div>
 
               <motion.p
                 initial={{ opacity: 0 }}

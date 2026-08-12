@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MapPin, Info, Compass, Sparkles, Building2 } from 'lucide-react';
+import { MapPin, Info, Compass, Sparkles, Building2, ExternalLink } from 'lucide-react';
 import { TOWNSHIPS } from '../data';
 import { TownshipInfo } from '../types';
 import mapImg from '../assets/images/kinmen-map.png';
@@ -64,12 +64,53 @@ export default function InteractiveMap() {
             </div>
 
             {/* Kinmen Map Image Container */}
-            <div className="w-full flex-1 flex items-center justify-center py-2 relative group overflow-hidden rounded-xl bg-stone-50/50 border border-stone-100">
-              <img 
-                src={mapImg} 
-                alt="金門地圖" 
-                className="w-full h-auto max-h-[380px] object-contain rounded-lg transition-transform duration-500 group-hover:scale-102"
-              />
+            <div className="w-full flex-1 flex items-center justify-center py-2 relative group rounded-xl bg-stone-50/50 border border-stone-100">
+              <div className="relative inline-block max-w-full">
+                <img 
+                  src={mapImg} 
+                  alt="金門地圖" 
+                  className="w-full h-auto max-h-[380px] object-contain rounded-lg transition-transform duration-500 group-hover:scale-102"
+                />
+
+                {/* DOC Location Pin Marker (金寧數位機會中心) */}
+                <motion.a 
+                  href="https://www.google.com/maps/place/%E6%98%94%E6%9E%9C%E5%B1%B1%E7%A4%BE%E5%8D%80%E6%B4%BB%E5%8B%95%E4%B8%AD%E5%BF%83/data=!4m2!3m1!1s0x0:0xbfbb47b5f319adfb?sa=X&ved=1t:2428&ictx=111"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+                  className="absolute -translate-x-1/2 -translate-y-full cursor-pointer z-10 group/pin block"
+                  style={{ left: '56.5%', top: '69%' }}
+                  onClick={() => setSelectedTownship(TOWNSHIPS.find(t => t.id === 'jinning') || TOWNSHIPS[0])}
+                  title="點擊前往 Google 地圖（昔果山社區活動中心）"
+                >
+                  {/* Ping Animation Rings */}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-8 h-8 bg-red-500/40 rounded-full animate-ping pointer-events-none" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3.5 h-3.5 bg-red-600 rounded-full border-2 border-white shadow-xs pointer-events-none" />
+
+                  {/* Pin Badge Label */}
+                  <div className="relative flex items-center gap-1 bg-gradient-to-r from-red-600 to-amber-600 text-white text-[11px] font-extrabold px-2.5 py-1 rounded-full shadow-lg border-2 border-white ring-2 ring-red-400/30 transform hover:scale-110 transition-transform whitespace-nowrap">
+                    <MapPin className="w-3.5 h-3.5 fill-white text-red-600 animate-bounce" />
+                    <span>金寧DOC 📍</span>
+                    <ExternalLink className="w-3 h-3 text-amber-200 ml-0.5 opacity-80" />
+                  </div>
+
+                  {/* Tooltip on Hover */}
+                  <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-56 p-2.5 bg-stone-900/95 text-white rounded-xl shadow-xl backdrop-blur-xs opacity-0 group-hover/pin:opacity-100 transition-opacity pointer-events-none z-20 text-center border border-stone-700">
+                    <p className="font-bold text-amber-300 text-xs flex items-center justify-center gap-1">
+                      <Sparkles className="w-3 h-3 text-amber-400" />
+                      金寧數位機會中心 (DOC)
+                    </p>
+                    <p className="text-[10px] text-stone-300 mt-1 leading-relaxed">
+                      位於金寧鄉昔果山社區活動中心，熱情歡迎大家前來數位學習！
+                    </p>
+                    <p className="text-[10px] text-amber-400 font-semibold mt-1.5 pt-1 border-t border-stone-800 flex items-center justify-center gap-1">
+                      <ExternalLink className="w-3 h-3" /> 點擊開啟 Google 地圖導航 🗺️
+                    </p>
+                  </div>
+                </motion.a>
+              </div>
             </div>
 
             {/* Township Selector Buttons underneath the map image */}
