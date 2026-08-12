@@ -10,14 +10,6 @@ import elderly05Img from './assets/images/regenerated_image_1786472569099.jpg';
 import elderly06Img from './assets/images/regenerated_image_1786472571479.jpg';
 import elderly07Img from './assets/images/regenerated_image_1786513772383.jpg';
 import elderly08Img from './assets/images/regenerated_image_1786513872747.jpg';
-import elderly09Img from './assets/images/regenerated_image_1786514070684.jpg';
-import elderly10Img from './assets/images/regenerated_image_1786514073215.jpg';
-import elderly11Img from './assets/images/regenerated_image_1786514075541.jpg';
-import elderly12Img from './assets/images/regenerated_image_1786514077862.jpg';
-import elderly13Img from './assets/images/regenerated_image_1786514080866.jpg';
-import elderly14Img from './assets/images/regenerated_image_1786514083630.jpg';
-import elderly15Img from './assets/images/regenerated_image_1786514085384.jpg';
-import elderly16Img from './assets/images/regenerated_image_1786514087572.jpg';
 
 export const SENIORS: Senior[] = [
   {
@@ -126,11 +118,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     lifePhotos: [
       {
-        url: elderly09Img,
+        url: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
         caption: '在傳統紅磚厝埕前擺上茶具熱情招待鄉親與同樂'
       },
       {
-        url: elderly10Img,
+        url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80',
         caption: '利用手機地圖導航載著 DOC 學員探訪周邊村落'
       }
     ]
@@ -149,11 +141,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-red-100 text-red-800 border-red-300',
     lifePhotos: [
       {
-        url: elderly11Img,
+        url: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80',
         caption: '架設平板腳架錄製編織教學影片準備上傳影音平台'
       },
       {
-        url: elderly12Img,
+        url: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&q=80',
         caption: '細心編織出送給小孫子的暖心純羊毛花帽'
       }
     ]
@@ -172,11 +164,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-teal-100 text-teal-800 border-teal-300',
     lifePhotos: [
       {
-        url: elderly13Img,
+        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
         caption: '古寧頭潮間帶花崗岩石蚵柱前巡視自家蚵田'
       },
       {
-        url: elderly14Img,
+        url: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80',
         caption: '出海前使用平板精準查詢中央氣象署每日潮汐預報'
       }
     ]
@@ -195,11 +187,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-300',
     lifePhotos: [
       {
-        url: elderly15Img,
+        url: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80',
         caption: '在金寧傳統古厝前大樹下吟唱即將失傳的金門古調'
       },
       {
-        url: elderly16Img,
+        url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
         caption: '在數位錄音教室將珍貴的金門語童謠數位保存'
       }
     ]
