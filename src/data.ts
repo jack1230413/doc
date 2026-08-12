@@ -16,6 +16,8 @@ import elderly11Img from './assets/images/regenerated_image_1786515037925.jpg';
 import elderly12Img from './assets/images/regenerated_image_1786515051717.jpg';
 import elderly13Img from './assets/images/regenerated_image_1786536808171.jpg';
 import elderly14Img from './assets/images/regenerated_image_1786536810060.jpg';
+import elderly15Img from './assets/images/regenerated_image_1786546007208.jpg';
+import elderly16Img from './assets/images/regenerated_image_1786546009647.jpg';
 
 export const SENIORS: Senior[] = [
   {
@@ -193,11 +195,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-300',
     lifePhotos: [
       {
-        url: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80',
+        url: elderly15Img,
         caption: '在金寧傳統古厝前大樹下吟唱即將失傳的金門古調'
       },
       {
-        url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
+        url: elderly16Img,
         caption: '在數位錄音教室將珍貴的金門語童謠數位保存'
       }
     ]
