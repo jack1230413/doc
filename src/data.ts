@@ -10,6 +10,10 @@ import elderly05Img from './assets/images/regenerated_image_1786472569099.jpg';
 import elderly06Img from './assets/images/regenerated_image_1786472571479.jpg';
 import elderly07Img from './assets/images/regenerated_image_1786513772383.jpg';
 import elderly08Img from './assets/images/regenerated_image_1786513872747.jpg';
+import elderly09Img from './assets/images/regenerated_image_1786515011460.jpg';
+import elderly10Img from './assets/images/regenerated_image_1786515028076.jpg';
+import elderly11Img from './assets/images/regenerated_image_1786515037925.jpg';
+import elderly12Img from './assets/images/regenerated_image_1786515051717.jpg';
 
 export const SENIORS: Senior[] = [
   {
@@ -118,11 +122,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     lifePhotos: [
       {
-        url: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+        url: elderly09Img,
         caption: '在傳統紅磚厝埕前擺上茶具熱情招待鄉親與同樂'
       },
       {
-        url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80',
+        url: elderly10Img,
         caption: '利用手機地圖導航載著 DOC 學員探訪周邊村落'
       }
     ]
@@ -141,11 +145,11 @@ export const SENIORS: Senior[] = [
     badgeColor: 'bg-red-100 text-red-800 border-red-300',
     lifePhotos: [
       {
-        url: 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80',
+        url: elderly11Img,
         caption: '架設平板腳架錄製編織教學影片準備上傳影音平台'
       },
       {
-        url: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&q=80',
+        url: elderly12Img,
         caption: '細心編織出送給小孫子的暖心純羊毛花帽'
       }
     ]
